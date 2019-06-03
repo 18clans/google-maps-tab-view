@@ -1,0 +1,10 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Browse"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <MapView #mapView [latitude]="startPos.latitude" [longitude]="startPos.longitude" [zoom]="zoom" [minZoom]="minZoom"
+    [mapAnimationsEnabled]="true" [maxZoom]="maxZoom" [bearing]="bearing" [tilt]="tilt" i-padding="50,50,50,50"
+    [padding]="padding" (mapReady)="onMapReady($event)"
+    ></MapView>
+</GridLayout>

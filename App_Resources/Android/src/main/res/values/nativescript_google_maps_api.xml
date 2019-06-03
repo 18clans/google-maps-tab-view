@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!-- Make sure "Maps SDK for Android" is turned on for the key you're using in Google Console otherwise the map will not render -->
+<!-- If you change this key, you must change it in services > environmentManager.service.ts for iOS -->
+<string name="nativescript_google_maps_api_key">YOUR_GOOGLE_MAPS_API_KEY</string>
+</resources>
