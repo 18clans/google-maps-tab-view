@@ -3,17 +3,10 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { BrowseRoutingModule } from "./browse-routing.module";
 import { BrowseComponent } from "./browse.component";
-
+import { MapModule } from "../components/map/map.module";
 @NgModule({
-    imports: [
-        NativeScriptCommonModule,
-        BrowseRoutingModule
-    ],
-    declarations: [
-        BrowseComponent
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+    imports: [NativeScriptCommonModule, BrowseRoutingModule, MapModule],
+    declarations: [BrowseComponent],
+    schemas: [NO_ERRORS_SCHEMA]
 })
-export class BrowseModule { }
+export class BrowseModule {}

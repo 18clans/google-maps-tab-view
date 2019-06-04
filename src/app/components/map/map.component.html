@@ -1,0 +1,15 @@
+<StackLayout >
+        <Button [visibility]="!showMap ? 'visible' : 'collapsed'"  text="Load Map" (tap)="onMapToggle()"></Button>
+        <GridLayout *ngIf="showMap" rows="*,50,40" class="page page-content">
+                <MapView row="0" #mapView [latitude]="startPos.latitude" [longitude]="startPos.longitude" [zoom]="zoom" [minZoom]="minZoom"
+                [mapAnimationsEnabled]="true" [maxZoom]="maxZoom" [bearing]="bearing" [tilt]="tilt" i-padding="50,50,50,50"
+                [padding]="padding" (mapReady)="onMapReady($event)" (markerSelect)="onMarkerSelect($event)" 
+                ></MapView>
+                <StackLayout row="1">
+                    <Button *ngIf="selectedMarker"  [text]="selectedMarker.userData.selected?'Unfavor Me':'Favor Me'" (tap)="onMarkerToggle()" style="width:150;color:black;background:yellowgreen"></Button>
+                </StackLayout>
+                <Button row="2" (tap)="onMapToggle()" text="Hide Map"></Button>
+             </GridLayout>
+</StackLayout>
+
+

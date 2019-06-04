@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { isAndroid } from "tns-core-modules/platform";
+import { isAndroid, isIOS } from "tns-core-modules/platform";
+declare var GMSServices: any;
 
 @Component({
     selector: "ns-app",
@@ -8,13 +9,15 @@ import { isAndroid } from "tns-core-modules/platform";
     styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-
     constructor() {
         // Use the component constructor to inject providers.
     }
 
     ngOnInit(): void {
         // Init your component properties here.
+        if (isIOS) {
+            GMSServices.provideAPIKey("YOUR GOOGLE API KEY");
+        }
     }
 
     getIconSource(icon: string): string {
